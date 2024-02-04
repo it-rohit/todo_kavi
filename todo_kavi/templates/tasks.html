@@ -1,0 +1,34 @@
+<!-- {{data_html.title}}
+{{data_html.description}} -->
+<form>
+    {% csrf_token %} 
+<table>
+    {% for i in data_html %}
+        <tr>
+            <th>Titlle</th>
+            <th>Description</th>
+        </tr>
+           <tr>
+                <td>
+                    <a href = "{% url 'taskdetails' id=i.id title=i.title %}">{{i.title}} {{i.id}}</a>          
+                </td>
+                <td>
+                    {{i.description}}
+                </td>
+
+                <td>
+                    {{i.due_date}} 
+                 
+                </td>
+           </tr> 
+            
+   
+    
+        <!--     
+    
+        {{i.title}}
+        {{i.description}} -->
+
+    {% endfor %}
+</table>
+</form>
